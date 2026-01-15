@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://se0144odkeu"]
+
+[ext_resource type="Texture2D" uid="uid://c0etnspptq4py" path="res://icon.svg" id="1_bw3m6"]
+[ext_resource type="FontFile" uid="uid://byx1qrg8b7adh" path="res://2D Resources/fonts/PixelOperator8.ttf" id="2_6614m"]
+[ext_resource type="PackedScene" uid="uid://cbrmgxn26ccle" path="res://player.tscn" id="3_bhu08"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhu08"]
+font = ExtResource("2_6614m")
+font_size = 26
+
+[node name="Main Level" type="Node2D"]
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(566, 568)
+scale = Vector2(3.0000005, 0.6640625)
+texture = ExtResource("1_bw3m6")
+
+[node name="Name Label" type="Label" parent="."]
+offset_left = 405.0
+offset_top = 422.0
+offset_right = 1793.0
+offset_bottom = 574.0
+text = "Christian Fuller"
+label_settings = SubResource("LabelSettings_bhu08")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(566, 503)
+zoom = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("3_bhu08")]
+position = Vector2(567, 517)
