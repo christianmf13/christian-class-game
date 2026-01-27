@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Christian Class Game"
-run/main_scene="uid://dnw14s7ysb6lq"
+run/main_scene="uid://7hhsf6xx7vl2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=2
 
 [input]
 
@@ -38,6 +46,10 @@ move_right={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_2="Player"
 
 [rendering]
 
