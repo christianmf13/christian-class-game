@@ -7,6 +7,8 @@ var dir : int = -1
 @onready var collision_shape_head_stomp: CollisionShape2D = $CollisionShapeHeadStomp
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
+@onready var killzone: Area2D = $Killzone
+
 
 
 func _process(delta: float) -> void:
@@ -20,5 +22,7 @@ func _process(delta: float) -> void:
 	position.x += SPEED * dir * delta
 
 #working on head stomp, not finished
-func _on_area_entered(area: Area2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
+	($Killzone as Area2D).disable_mode
+	($AnimatedSprite2D as AnimatedSprite2D).play("HeadStomp")
 	queue_free()
