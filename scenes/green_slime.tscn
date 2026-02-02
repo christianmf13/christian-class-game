@@ -115,7 +115,7 @@ script = ExtResource("1_0pvn7")
 sprite_frames = SubResource("SpriteFrames_35rgu")
 animation = &"HeadStomp"
 autoplay = "default"
-frame_progress = 0.6256476
+frame_progress = 0.29500175
 
 [node name="CollisionShapeHeadStomp" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

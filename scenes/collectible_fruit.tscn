@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtjfm8hilbnio"]
+
+[ext_resource type="Script" uid="uid://ycwijdi2bfej" path="res://scripts/collectible_fruit.gd" id="1_3scj4"]
+[ext_resource type="Texture2D" uid="uid://clnbyy37gnm01" path="res://assets/items/fruit.png" id="1_5af6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3scj4"]
+atlas = ExtResource("1_5af6t")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q7ip"]
+atlas = ExtResource("1_5af6t")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76eub"]
+atlas = ExtResource("1_5af6t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st5qv"]
+atlas = ExtResource("1_5af6t")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0lnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3scj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q7ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76eub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st5qv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CollectibleFruit" type="Area2D"]
+script = ExtResource("1_3scj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c0lnm")
+autoplay = "default"
+frame = 3
+frame_progress = 0.9285196
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 8, -6, 0, -2, -6, 4, -7, 5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
