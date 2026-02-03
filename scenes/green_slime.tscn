@@ -72,7 +72,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"HeadStomp",
-"speed": 9.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,10 +102,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pvn7"]
-size = Vector2(10, 3)
+size = Vector2(12, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5vyh"]
-size = Vector2(14, 7)
+size = Vector2(14, 6)
 
 [node name="GreenSlime" type="Area2D" groups=["Enemies"]]
 collision_mask = 2
@@ -115,16 +115,15 @@ script = ExtResource("1_0pvn7")
 sprite_frames = SubResource("SpriteFrames_35rgu")
 animation = &"HeadStomp"
 autoplay = "default"
-frame_progress = 0.29500175
 
 [node name="CollisionShapeHeadStomp" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_0pvn7")
 
 [node name="Killzone" parent="." instance=ExtResource("2_0pvn7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 4.5)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_t5vyh")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -134,7 +133,6 @@ target_position = Vector2(8, 0)
 target_position = Vector2(-8, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

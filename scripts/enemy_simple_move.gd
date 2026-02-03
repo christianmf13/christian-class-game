@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED : float = 60.0
+var SPEED : float = 60.0
 var dir : int = -1
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -8,6 +8,7 @@ var dir : int = -1
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var killzone: Area2D = $Killzone
+@onready var timer: Timer = $Timer
 
 
 
@@ -23,5 +24,13 @@ func _process(delta: float) -> void:
 
 #working on head stomp, not finished
 func _on_body_entered(body: Node2D) -> void:
-	($AnimatedSprite2D as AnimatedSprite2D).play("HeadStomp")
+	killzone.monitoring = false
+	animated_sprite_2d.play("HeadStomp")
+	SPEED = 0
+	timer.start()
+	
+	
+
+
+func _on_timer_timeout() -> void:
 	queue_free()
