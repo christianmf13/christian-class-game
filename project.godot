@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Christian Class Game"
-run/main_scene="uid://7hhsf6xx7vl2"
+run/main_scene="uid://cjltov6jjqjoe"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Bgm="*res://scenes/bgm.tscn"
 
 [debug]
 
