@@ -1,8 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmbxgjgsxf7k5"]
+[gd_scene load_steps=15 format=3 uid="uid://dmbxgjgsxf7k5"]
 
 [ext_resource type="Script" uid="uid://b01lki748a2ko" path="res://scripts/boss_dino.gd" id="1_pk0b6"]
 [ext_resource type="Texture2D" uid="uid://d1lkpsv83dowf" path="res://assets/characters/DinoSprites - mort.png" id="2_gdlov"]
 [ext_resource type="PackedScene" uid="uid://c8m1r23w5tydn" path="res://scenes/killzone.tscn" id="3_7aj1s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk0b6"]
+atlas = ExtResource("2_gdlov")
+region = Rect2(336, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdlov"]
+atlas = ExtResource("2_gdlov")
+region = Rect2(360, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aj1s"]
+atlas = ExtResource("2_gdlov")
+region = Rect2(384, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18fiq"]
 atlas = ExtResource("2_gdlov")
@@ -22,6 +34,20 @@ region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehva7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk0b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdlov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aj1s")
+}],
+"loop": false,
+"name": &"HeadStomp",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_18fiq")
@@ -55,8 +81,10 @@ script = ExtResource("1_pk0b6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ehva7")
+animation = &"HeadStomp"
 autoplay = "default"
-frame_progress = 0.0403517
+frame = 2
+frame_progress = 1.0
 
 [node name="HeadStomp" type="CollisionShape2D" parent="."]
 position = Vector2(2, -5.5)

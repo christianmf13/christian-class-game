@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnaa2fvrb3vgj"]
+
+[ext_resource type="FontFile" uid="uid://fwo31b6gsc4x" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://byx1qrg8b7adh" path="res://assets/fonts/PixelOperator8.ttf" id="2_0ctdu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fbfq"]
+font = ExtResource("1_2ckv8")
+font_size = 85
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gwij"]
+font = ExtResource("2_0ctdu")
+font_size = 45
+
+[node name="Credits" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -435.5
+offset_top = 105.0
+offset_right = 435.5
+offset_bottom = 280.0
+grow_horizontal = 2
+text = "THANK YOU
+FOR PLAYING"
+label_settings = SubResource("LabelSettings_2fbfq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = 84.0
+offset_right = 295.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CREATED BY
+CHRISTIAN FULLER"
+label_settings = SubResource("LabelSettings_8gwij")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1385.0
+offset_top = -902.0
+offset_right = -1345.0
+offset_bottom = -862.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(81.30785, 50.528988)

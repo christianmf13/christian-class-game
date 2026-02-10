@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ukqwe")
 }],
-"loop": true,
+"loop": false,
 "name": &"HeadStomp",
 "speed": 12.0
 }, {
@@ -102,10 +102,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pvn7"]
-size = Vector2(12, 3)
+size = Vector2(12, 5.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5vyh"]
-size = Vector2(14, 6)
+size = Vector2(14, 4)
 
 [node name="GreenSlime" type="Area2D" groups=["Enemies"]]
 collision_mask = 2
@@ -117,13 +117,13 @@ animation = &"HeadStomp"
 autoplay = "default"
 
 [node name="CollisionShapeHeadStomp" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_0pvn7")
 
 [node name="Killzone" parent="." instance=ExtResource("2_0pvn7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 5)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_t5vyh")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -132,7 +132,4 @@ target_position = Vector2(8, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-8, 0)
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
